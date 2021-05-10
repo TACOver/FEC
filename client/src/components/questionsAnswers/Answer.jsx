@@ -12,7 +12,7 @@ const Answer = (props) => {
   const [reported, setReported] = useState(false);
 
   const onReportClick = (answerId) => {
-    axios.put(`/api/?endpoint=qa/answers/${answerId}/report`)
+    axios.put(`/qa/answers/${answerId}/report`)
       .then(setReported(true));
   };
 

@@ -4,7 +4,7 @@ const axios = require('axios');
 export const fetchStyleInfo = createAsyncThunk(
   'products/getStyleInfo',
   async (productId, thunkAPI) => {
-    const response = await axios.get(`/api/?endpoint=products/${productId}/styles`);
+    const response = await axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/products/${productId}/styles`);
     return response.data;
   }
 );

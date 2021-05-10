@@ -70,10 +70,11 @@ export default function AddAModal (props) {
 
   const onSubmitClick = (questionId) => {
     if (answer.length && nickname.length && email.length) {
-      axios.post(`/api/?endpoint=qa/questions/${questionId}/answers`, {
+      axios.put(`/qa/answers`, {
         body: answer,
         name: nickname,
         email: email,
+        question_id: questionId,
         photos: []
       })
         .then(() => dispatch(fetchQuestions(productId)))

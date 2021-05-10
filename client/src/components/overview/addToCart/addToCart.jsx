@@ -39,7 +39,7 @@ const AddToCart = (props) => {
   }
 
   const addToCart = (sku) => {
-    axios.post(`/api/?endpoint=cart`, {
+    axios.post(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/cart`, {
       sku_id: sku
     });
   };

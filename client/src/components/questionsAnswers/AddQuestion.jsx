@@ -66,7 +66,7 @@ export default function AddQModal () {
 
   const onSubmitClick = () => {
     if (question.length && nickname.length && email.length) {
-      axios.post('/api/?endpoint=qa/questions', {
+      axios.post('/qa/questions', {
         body: question,
         name: nickname,
         email: email,

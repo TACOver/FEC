@@ -2,15 +2,15 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 const axios = require('axios');
 
 const generateRelatedItemsPromise = function (productId) {
-  return axios.get(`/api/?endpoint=products/${productId}`);
+  return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/products/${productId}`);
 };
 
 const generateRelatedStylePromise = function (productId) {
-  return axios.get(`/api/?endpoint=products/${productId}/styles`);
+  return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/products/${productId}/styles`);
 };
 
 const generateRelatedReviewMetaDataPromise = function (productId) {
-  return axios.get(`/api/?endpoint=reviews/meta?product_id=${productId}`);
+  return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/meta?product_id=${productId}`);
 };
 
 const calcAvgRating = (objectOfRatings) => {
@@ -31,7 +31,7 @@ export const fetchRelated = createAsyncThunk(
   'products/getRelated',
   async (productId, thunkAPI) => {
     let itemInfo;
-    await axios.get(`/api/?endpoint=products/${productId}/related`)
+    await axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/products/${productId}/related`)
       .then(function (response) {
         return response.data;
       })

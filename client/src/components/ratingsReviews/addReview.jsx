@@ -115,7 +115,7 @@ export default function AddReviewModal () {
         // imgURLs = images.map(img => img.data_url);
         // console.log(`Img urls: ${imgURLs}`);
 
-        axios.post(`/api/?endpoint=reviews`, {
+        axios.post(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews`, {
           product_id: productId,
           rating: overallRating,
           summary: reviewSummary,
