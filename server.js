@@ -8,6 +8,7 @@ const port = 3001;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, './client/dist')));
 
+<<<<<<< HEAD
 // QUESTION REQUESTS
 app.get('/qa/questions', (req, res) => {
   if (err) {
@@ -35,6 +36,9 @@ app.put('/qa/*', (req, res) => {
 
 // ORIGINAL REQUESTS
 app.get('/api/*', (req, res) => {
+=======
+app.get('/', (req, res) => {
+>>>>>>> main
   let endpoint = req.url.substring(15);
   atelier.getEndpoint(endpoint, (error, products) => {
     if (error) {
@@ -45,7 +49,7 @@ app.get('/api/*', (req, res) => {
   });
 });
 
-app.post('/api/*', (req, res) => {
+app.post('/', (req, res) => {
   let endpoint = req.query.endpoint;
   // console.log('endpoint:', endpoint);
   atelier.postToEndpoint(endpoint, req.body, (error, results) => {
@@ -57,7 +61,14 @@ app.post('/api/*', (req, res) => {
   });
 });
 
+<<<<<<< HEAD
 app.put('/api/*', (req, res) => {
+=======
+// app.post('/reviewPhotos', (req, res) => {
+// });
+
+app.put('/', (req, res) => {
+>>>>>>> main
   let endpoint = req.query.endpoint;
   atelier.putToEndpoint(endpoint, req.body, (error, results) => {
     if (error) {

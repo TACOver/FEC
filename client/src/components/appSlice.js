@@ -4,7 +4,7 @@ const axios = require('axios');
 export const fetchProductInfo = createAsyncThunk(
   'products/getProductInfo',
   async (productId, thunkAPI) => {
-    const response = await axios.get(`/api/?endpoint=products/${productId}`);
+    const response = await axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/products/${productId}`);
     return response.data;
   }
 );
@@ -12,7 +12,7 @@ export const fetchProductInfo = createAsyncThunk(
 export const fetchReviewMetadata = createAsyncThunk(
   'reviews/getReviewMetadata',
   async (productId, thunkAPI) => {
-    const response = await axios.get(`/api/?endpoint=reviews/meta?product_id=${productId}`);
+    const response = await axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/meta?product_id=${productId}`);
     return response.data;
   }
 );
@@ -20,7 +20,7 @@ export const fetchReviewMetadata = createAsyncThunk(
 export const fetchReviewsNewest = createAsyncThunk(
   'reviews/getReviewsNewest',
   async (productId, thunkAPI) => {
-    const response = await axios.get(`/api/?endpoint=reviews/?product_id=${productId}&count=100&sort=newest`);
+    const response = await axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product_id=${productId}&count=100&sort=newest`);
     return response.data.results;
   }
 );
@@ -28,7 +28,7 @@ export const fetchReviewsNewest = createAsyncThunk(
 export const fetchReviewsHelpful = createAsyncThunk(
   'reviews/getReviewsHelpful',
   async (productId, thunkAPI) => {
-    const response = await axios.get(`/api/?endpoint=reviews/?product_id=${productId}&count=100&sort=helpful`);
+    const response = await axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product_id=${productId}&count=100&sort=helpful`);
     return response.data.results;
   }
 );
@@ -36,7 +36,7 @@ export const fetchReviewsHelpful = createAsyncThunk(
 export const fetchReviewsRelevant = createAsyncThunk(
   'reviews/getReviewsRelevant',
   async (productId, thunkAPI) => {
-    const response = await axios.get(`/api/?endpoint=reviews/?product_id=${productId}&count=100&sort=relevant`);
+    const response = await axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product_id=${productId}&count=100&sort=relevant`);
     return response.data.results;
   }
 );
@@ -64,7 +64,7 @@ const getNumOfReviews = (objectOfRatings) => {
 };
 
 const postTrackingData = (data) => {
-  axios.post('/api/?endpoint=interactions', data);
+  axios.post('https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/interactions', data);
   // .then(response => {
   //   console.log(response.data);
   // })

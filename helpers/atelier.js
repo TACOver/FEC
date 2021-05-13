@@ -3,7 +3,7 @@ const API_KEY = require('../APIconfig');
 const API_URL = 'http://app-hrsei-api.herokuapp.com/api/fec2/hr-bld';
 
 const getEndpoint = (endpoint, callback) => {
-  axios.get(`${API_URL}/${endpoint}`, {
+  axios.get(`${API_URL}${endpoint}`, {
     headers: {
       Authorization: API_KEY
     }
@@ -17,7 +17,7 @@ const getEndpoint = (endpoint, callback) => {
 };
 
 const postToEndpoint = (endpoint, body, callback) => {
-  axios.post(`${API_URL}/${endpoint}`, body, {
+  axios.post(`${API_URL}${endpoint}`, body, {
     headers: {
       Authorization: API_KEY
     }
@@ -31,7 +31,7 @@ const postToEndpoint = (endpoint, body, callback) => {
 };
 
 const putToEndpoint = (endpoint, body, callback) => {
-  axios.put(`${API_URL}/${endpoint}`, body, {
+  axios.put(`${API_URL}${endpoint}`, body, {
     headers: {
       Authorization: API_KEY
     }
