@@ -28,7 +28,7 @@ const Answers = (props) => {
             if (index < 2) {
               return (
                 <Answer
-                  key={answer.id}
+                  key={answer._id}
                   answer={answer}
                   index={index}/>
               );
@@ -63,7 +63,7 @@ const Answers = (props) => {
           overflowX: 'hidden',
           overflowY: 'auto' }}>
           {sortedAnswers.map((answer, index) => {
-            return <Answer key={answer.id} answer={answer} index={index}/>;
+            return <Answer key={answer._id} answer={answer} index={index}/>;
           })}
         </Grid>
         <div style={{ textAlign: 'center' }}>

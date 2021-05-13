@@ -66,7 +66,7 @@ export default function AddQModal () {
 
   const onSubmitClick = () => {
     if (question.length && nickname.length && email.length) {
-      axios.post('/qa/questions', {
+      axios.post('http://18.219.220.111:3000/qa/questions', {
         body: question,
         name: nickname,
         email: email,

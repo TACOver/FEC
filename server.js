@@ -8,7 +8,37 @@ const port = 3001;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, './client/dist')));
 
+<<<<<<< HEAD
+// QUESTION REQUESTS
+app.get('/qa/questions', (req, res) => {
+  if (err) {
+    console.log('FEC ERROR ', err);
+  } else {
+    console.log('FEC GET successful', res);
+  }
+});
+
+app.post('/qa/*', (req, res) => {
+  if (err) {
+    console.log('FEC ERROR ', err);
+  } else {
+    console.log('FEC POST successful', res);
+  }
+});
+
+app.put('/qa/*', (req, res) => {
+  if (err) {
+    console.log('FEC ERROR ', err);
+  } else {
+    console.log('FEC PUT successful', res);
+  }
+});
+
+// ORIGINAL REQUESTS
+app.get('/api/*', (req, res) => {
+=======
 app.get('/', (req, res) => {
+>>>>>>> main
   let endpoint = req.url.substring(15);
   atelier.getEndpoint(endpoint, (error, products) => {
     if (error) {
@@ -31,10 +61,14 @@ app.post('/', (req, res) => {
   });
 });
 
+<<<<<<< HEAD
+app.put('/api/*', (req, res) => {
+=======
 // app.post('/reviewPhotos', (req, res) => {
 // });
 
 app.put('/', (req, res) => {
+>>>>>>> main
   let endpoint = req.query.endpoint;
   atelier.putToEndpoint(endpoint, req.body, (error, results) => {
     if (error) {

@@ -12,7 +12,7 @@ const Answer = (props) => {
   const [reported, setReported] = useState(false);
 
   const onReportClick = (answerId) => {
-    axios.put(`/qa/answers/${answerId}/report`)
+    axios.put(`http://18.219.220.111:3000/qa/answers/${answerId}/report`)
       .then(setReported(true));
   };
 
@@ -30,7 +30,7 @@ const Answer = (props) => {
           <u
             className="clickable"
             onClick={() => {
-              dispatch(incrementHelpfulAnswerCount(props.answer.id));
+              dispatch(incrementHelpfulAnswerCount(props.answer._id));
               setAnswerHelpfulnessCount(answerHelpfulnessCount + 1);
               setHelpfulAClicked(true);
             }}>Yes
@@ -38,7 +38,7 @@ const Answer = (props) => {
           ({answerHelpfulnessCount}) &nbsp; | &nbsp;
         {!reported ?
           <u className="clickable"
-            onClick={() => onReportClick(props.answer.id)}
+            onClick={() => onReportClick(props.answer._id)}
           >Report
           </u> : 'Reported'}
       </span>

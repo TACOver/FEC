@@ -1,6 +1,6 @@
 const axios = require('axios');
 const API_KEY = require('../APIconfig');
-const API_URL = 'http://localhost:3000';
+const API_URL = 'http://app-hrsei-api.herokuapp.com/api/fec2/hr-bld';
 
 const getEndpoint = (endpoint, callback) => {
   axios.get(`${API_URL}${endpoint}`, {
